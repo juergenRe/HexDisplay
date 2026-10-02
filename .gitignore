@@ -1,0 +1,16 @@
+# gitignore for MPLAB.X projects
+build/
+dist/
+debug/
+queuelogs/
+.generated_files/
+nbproject/private
+nbproject/Makefile-*
+nbproject/Package-*
+defmplabxtrace.log
+defmplabxtrace.log.inx
+MPLABXlog.*
+build_failure_log.txt
+.vscode
+*.zip
+*.bak
