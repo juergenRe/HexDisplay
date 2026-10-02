@@ -11,8 +11,10 @@ uint8_t actDataVal = 0x00;      // 8 bit value to be displayed
 uint8_t actAddress = 0;         // addresses the common anodes (A0, A1))
 
 uint8_t outSegment[] = {
-    0x3f, 0x06, 0x5b, 0x8f, 0x66, 0x6d, 0x7d, 0x07, 
-    0x7f, 0x6f, 0x77, 0x7c, 0x39, 0x5e, 0x79, 0x71
+    // 0     1     2     3     4     5     6     7
+    0xcf, 0x06, 0xad, 0x2f, 0x66, 0x6b, 0xeb, 0x0e, 
+    0xef, 0x6f, 0xee, 0xe3, 0xc9, 0xa7, 0xe9, 0xe8
+    // 8     9     a     b     c     d     e     f
 };
 
 
@@ -28,12 +30,12 @@ void setAnode(void){
 void setSegments(void){
     uint8_t inVal = actDataVal;
     // get data nibble according to anode address
-    if(actAddress & 0x02)
+    if(actAddress & selDigit2)
         inVal = inVal >> 4;
     inVal &= 0x0f;
     
     uint8_t segVal = outSegment[inVal];
-    if(actAddress & 0x01)
+    if(actAddress & selHalfNibble)
         segVal = (segVal >> 4);
     segVal &= 0x0f;
     PORTA_OUTCLR = DxMask;
@@ -63,12 +65,6 @@ void readDataVal(void){
         inData |= (inPortB & 0x0E) << 3;    // Bits 4, 5, 6
         inData |= (inPortB & 0x20) << 2;    // Bit 7
         actDataVal = inData;
-        
-        /* Debug input conversion only
-        uint8_t segVal = actDataVal >> 4;
-        PORTA_OUTCLR = DxMask;
-        PORTA_OUTSET = (segVal << DxShift) & DxMask;
-        */
     }
 }
 

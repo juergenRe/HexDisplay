@@ -18,6 +18,10 @@ extern "C" {
 
 #define AxShift 1       // how many bits to shift left
 #define DxShift 4       // how many bits to shift left
+   
+// This definition is due to wiring of the decoder
+#define selDigit2 1     // bit number to distinguish between segment displays
+#define selHalfNibble 2 // bit number to distinguish between anodes
     
 void driver(void);
 void readDataVal(void);

@@ -55,6 +55,7 @@ void MainEvent_cb(void){
 int main(void)
 {
     SYSTEM_Initialize();
+    TCB0_PeriodSet(0x2058U);
     TCB0_CaptureCallbackRegister(MainEvent_cb);
     ei();
     
