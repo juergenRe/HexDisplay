@@ -58,6 +58,8 @@
 //#define DEna_EnableInterruptForLowLevelSensing() do { PORTA.PIN3CTRL = (PORTA.PIN3CTRL & ~PORT_ISC_gm) | 0x5 ; } while(0)
 //#define PB5_SetInterruptHandler DEna_SetInterruptHandler
 
+#define Enable_GetValue() (VPORTC.IN & (0x1 << 2))
+#define Latch_GetValue() (VPORTC.IN & (0x1 << 3))
 
 /**
  * @ingroup  pinsdriver

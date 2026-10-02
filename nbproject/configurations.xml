@@ -69,10 +69,12 @@
         </logicalFolder>
       </logicalFolder>
       <itemPath>main.c</itemPath>
+      <itemPath>segmentDriver.c</itemPath>
+      <itemPath>segmentDriver.h</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
-    <Elem>mcc_generated_files/timer</Elem>
+    <Elem>.</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>

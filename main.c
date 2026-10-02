@@ -33,6 +33,7 @@
     THIS SOFTWARE.
 */
 #include "mcc_generated_files/system/system.h"
+#include "segmentDriver.h"
 
 /*
     Main application
@@ -42,12 +43,12 @@
 uint16_t ActCnt = 0;
 
 void MainEvent_cb(void){
-    if(ActCnt++ >= MainPeriod){
-        ActCnt = 0;
-    }
-    DEna_Toggle();    
-    //setDataVal(actData);
-    //driver();
+//    if(ActCnt++ >= MainPeriod){
+//        ActCnt = 0;
+//    }
+//    DEna_Toggle();    
+    readDataVal();
+    driver();
 }
 
 
