@@ -30,7 +30,7 @@ void setAnode(void){
 void setSegments(void){
     uint8_t inVal = actDataVal;
     // get data nibble according to anode address
-    if(actAddress & selDigit2)
+    if(!(actAddress & selDigit2))
         inVal = inVal >> 4;
     inVal &= 0x0f;
     
