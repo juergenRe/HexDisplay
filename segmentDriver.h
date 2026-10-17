@@ -23,8 +23,15 @@ extern "C" {
 #define selDigit2 1     // bit number to distinguish between segment displays
 #define selHalfNibble 2 // bit number to distinguish between anodes
     
+// define input configurations here
+#define CFG_STD 0           // standard configuration corresponding to schematics
+#define CFG_ProgCount 1     // bits as used for program coutner schematics
+
+
 void driver(void);
 void readDataVal(void);
+uint8_t readCfgStd(uint8_t inB, uint8_t inC);
+uint8_t readCfgPC(uint8_t inB, uint8_t inC);
 
 #ifdef	__cplusplus
 }

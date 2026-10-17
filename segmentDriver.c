@@ -55,16 +55,46 @@ void driver(void){
 
 // read data from bus and reorder it
 void readDataVal(void){
-    uint8_t inData = 0;
     uint8_t inPortB = VPORTB.IN;
+    uint8_t inPortC = VPORTC.IN;
+    uint8_t ucfg = USERROW.USERROW0;
     
     if(Latch_GetValue() != 0) {
-        inData |= inPortB & 0x01;           // Bit 0
-        inData |= (VPORTC.IN & 0x3) << 1;   // Bit 1,2
-        inData |= (inPortB & 0x10) >> 1;    // Bit 3
-        inData |= (inPortB & 0x0E) << 3;    // Bits 4, 5, 6
-        inData |= (inPortB & 0x20) << 2;    // Bit 7
-        actDataVal = inData;
+        switch(ucfg){
+            case CFG_STD:
+                actDataVal = readCfgStd(inPortB, inPortC);
+                break;
+            case CFG_ProgCount:
+                actDataVal = readCfgPC(inPortB, inPortC);
+                break;
+            default:
+                break;
+        }
     }
 }
 
+
+// standard  pinout
+uint8_t readCfgStd(uint8_t inB, uint8_t inC){
+    uint8_t inData = 0;
+    inData |= inB & 0x01;           // Bit 0
+    inData |= (inC & 0x3) << 1;   // Bit 1,2
+    inData |= (inB & 0x10) >> 1;    // Bit 3
+    inData |= (inB & 0x0E) << 3;    // Bits 4, 5, 6
+    inData |= (inB & 0x20) << 2;    // Bit 7
+    return inData;
+}
+
+// program counter pinout
+uint8_t readCfgPC(uint8_t inB, uint8_t inC){
+    uint8_t inData = 0;
+    if(inB & 0x10) inData |= 0x01;
+    if(inB & 0x20) inData |= 0x02;
+    if(inC & 0x02) inData |= 0x04;
+    if(inB & 0x08) inData |= 0x08;
+    if(inC & 0x01) inData |= 0x10;
+    if(inB & 0x04) inData |= 0x20;
+    if(inB & 0x01) inData |= 0x40;
+    if(inB & 0x02) inData |= 0x80;
+    return inData;
+}
