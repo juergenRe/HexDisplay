@@ -32,6 +32,7 @@ void driver(void);
 void readDataVal(void);
 uint8_t readCfgStd(uint8_t inB, uint8_t inC);
 uint8_t readCfgPC(uint8_t inB, uint8_t inC);
+void setAnode(void);
 
 #ifdef	__cplusplus
 }

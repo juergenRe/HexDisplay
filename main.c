@@ -34,23 +34,22 @@
 */
 #include "mcc_generated_files/system/system.h"
 #include "segmentDriver.h"
+#include "segmentTest.h"
 
 /*
     Main application
 */
 
-#define MainPeriod 50      // Base tick is 10ms --> 1s
-uint16_t ActCnt = 0;
 
 void MainEvent_cb(void){
-//    if(ActCnt++ >= MainPeriod){
-//        ActCnt = 0;
-//    }
-//    DEna_Toggle();    
-    readDataVal();
-    driver();
+    if (USERROW.USERROW0 == 0xff)
+        segmentTest();
+    else {
+        readDataVal();
+        driver();
+        ;
+    }
 }
-
 
 int main(void)
 {

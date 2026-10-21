@@ -13,25 +13,24 @@
               <itemPath>mcc_generated_files/system/utils/assembler/iar.h</itemPath>
               <itemPath>mcc_generated_files/system/utils/assembler/gas.h</itemPath>
             </logicalFolder>
-            <itemPath>mcc_generated_files/system/utils/interrupt_avr8.h</itemPath>
-            <itemPath>mcc_generated_files/system/utils/utils.h</itemPath>
             <itemPath>mcc_generated_files/system/utils/atomic.h</itemPath>
             <itemPath>mcc_generated_files/system/utils/compiler.h</itemPath>
-            <itemPath>mcc_generated_files/system/utils/utils_assert.h</itemPath>
+            <itemPath>mcc_generated_files/system/utils/utils.h</itemPath>
+            <itemPath>mcc_generated_files/system/utils/interrupt_avr8.h</itemPath>
             <itemPath>mcc_generated_files/system/utils/assembler.h</itemPath>
+            <itemPath>mcc_generated_files/system/utils/utils_assert.h</itemPath>
           </logicalFolder>
           <itemPath>mcc_generated_files/system/interrupt.h</itemPath>
           <itemPath>mcc_generated_files/system/clock.h</itemPath>
-          <itemPath>mcc_generated_files/system/protected_io.h</itemPath>
-          <itemPath>mcc_generated_files/system/system.h</itemPath>
           <itemPath>mcc_generated_files/system/ccp.h</itemPath>
-          <itemPath>mcc_generated_files/system/pins.h</itemPath>
+          <itemPath>mcc_generated_files/system/system.h</itemPath>
+          <itemPath>mcc_generated_files/system/protected_io.h</itemPath>
           <itemPath>mcc_generated_files/system/port.h</itemPath>
+          <itemPath>mcc_generated_files/system/pins.h</itemPath>
         </logicalFolder>
         <logicalFolder name="timer" displayName="timer" projectFiles="true">
-          <itemPath>mcc_generated_files/timer/delay.h</itemPath>
-          <itemPath>mcc_generated_files/timer/tcb0_deprecated.h</itemPath>
           <itemPath>mcc_generated_files/timer/tcb0.h</itemPath>
+          <itemPath>mcc_generated_files/timer/timer_interface.h</itemPath>
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
@@ -64,13 +63,14 @@
         <logicalFolder name="timer" displayName="timer" projectFiles="true">
           <logicalFolder name="src" displayName="src" projectFiles="true">
             <itemPath>mcc_generated_files/timer/src/tcb0.c</itemPath>
-            <itemPath>mcc_generated_files/timer/timer_interface.h</itemPath>
           </logicalFolder>
         </logicalFolder>
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>segmentDriver.c</itemPath>
       <itemPath>segmentDriver.h</itemPath>
+      <itemPath>segmentTest.c</itemPath>
+      <itemPath>segmentTest.h</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -90,7 +90,7 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="ATtiny_DFP" vendor="Microchip" version="3.3.272"/>
+        <pack name="ATtiny_DFP" vendor="Microchip" version="3.4.278"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -151,6 +151,8 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-7ff"/>
         <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/Users/Juergen/Documents/Projects/MPLabX/HexDisplay.X/debug/default/HexDisplay_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
@@ -159,7 +161,7 @@
         <property key="programoptions.preserveeeprom.ranges" value="1400-147f"/>
         <property key="programoptions.preserveprogram.ranges" value=""/>
         <property key="programoptions.preserveprogramrange" value="false"/>
-        <property key="programoptions.preserveuserid" value="true"/>
+        <property key="programoptions.preserveuserid" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>
@@ -293,8 +295,6 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-7ff"/>
         <property key="poweroptions.powerenable" value="false"/>
-        <property key="programmerToGoFilePath"
-                  value="C:/Users/Juergen/Documents/Projects/MPLabX/HexDisplay.X/debug/default/HexDisplay_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
@@ -303,7 +303,7 @@
         <property key="programoptions.preserveeeprom.ranges" value="1400-147f"/>
         <property key="programoptions.preserveprogram.ranges" value=""/>
         <property key="programoptions.preserveprogramrange" value="false"/>
-        <property key="programoptions.preserveuserid" value="true"/>
+        <property key="programoptions.preserveuserid" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>
@@ -333,6 +333,9 @@
         <property key="user-pack-device-support" value=""/>
         <property key="wpo-lto" value="false"/>
       </XC8-config-global>
+      <ri4hybrid>
+        <property key="debugoptions.useswbreakpoints" value="true"/>
+      </ri4hybrid>
     </conf>
   </confs>
 </configurationDescriptor>

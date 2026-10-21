@@ -39,7 +39,7 @@
 
 #include "../tcb0.h"
 
-const struct TIMER_INTERFACE MainTimer = {    
+const struct TIMER_INTERFACE TMain = {    
     .Initialize = TCB0_Initialize,
     .Deinitialize = TCB0_Deinitialize,
     .Start = TCB0_Start,

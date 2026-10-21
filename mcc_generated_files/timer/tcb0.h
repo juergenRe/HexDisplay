@@ -62,80 +62,80 @@
  * @brief Defines the Custom Name for the \ref TCB0_MAX_COUNT.
  */
 /* cppcheck-suppress misra-c2012-2.5 */
-#define MAINTIMER_MAX_COUNT TCB0_MAX_COUNT
+#define TMAIN_MAX_COUNT TCB0_MAX_COUNT
 /**
  * @ingroup timerdriver
  * @brief Defines the Custom Name for the \ref TCB0_CLOCK_FREQ.
  */
 /* cppcheck-suppress misra-c2012-2.5 */
-#define MAINTIMER_CLOCK_FREQ TCB0_CLOCK_FREQ
+#define TMAIN_CLOCK_FREQ TCB0_CLOCK_FREQ
 /**
  * @ingroup timerdriver
  * @brief Defines the Custom Name for the \ref TCB0_Initialize API
  */
  /* cppcheck-suppress misra-c2012-2.5 */
-#define MainTimer_Initialize TCB0_Initialize
+#define TMain_Initialize TCB0_Initialize
 /**
  * @ingroup timerdriver
  * @brief Defines the Custom Name for the \ref TCB0_Deinitialize API
  */
  /* cppcheck-suppress misra-c2012-2.5 */
-#define MainTimer_Deinitialize TCB0_Deinitialize
+#define TMain_Deinitialize TCB0_Deinitialize
 /**
  * @ingroup timerdriver
  * @brief Defines the Custom Name for the \ref TCB0_Start API
  */
  /* cppcheck-suppress misra-c2012-2.5 */
-#define MainTimer_Start TCB0_Start
+#define TMain_Start TCB0_Start
 /**
  * @ingroup timerdriver
  * @brief Defines the Custom Name for the \ref TCB0_Stop API
  */
  /* cppcheck-suppress misra-c2012-2.5 */
-#define MainTimer_Stop TCB0_Stop
+#define TMain_Stop TCB0_Stop
 /**
  * @ingroup timerdriver
  * @brief Defines the Custom Name for the \ref TCB0_CounterGet API
  */
  /* cppcheck-suppress misra-c2012-2.5 */
-#define MainTimer_CounterGet TCB0_CounterGet
+#define TMain_CounterGet TCB0_CounterGet
 /**
  * @ingroup timerdriver
  * @brief Defines the Custom Name for the \ref TCB0_CounterSet API
  */
  /* cppcheck-suppress misra-c2012-2.5 */
-#define MainTimer_CounterSet TCB0_CounterSet
+#define TMain_CounterSet TCB0_CounterSet
 /**
  * @ingroup timerdriver
  * @brief Defines the Custom Name for the \ref TCB0_PeriodSet API
  */
  /* cppcheck-suppress misra-c2012-2.5 */
-#define MainTimer_PeriodSet TCB0_PeriodSet
+#define TMain_PeriodSet TCB0_PeriodSet
 /**
  * @ingroup timerdriver
  * @brief Defines the Custom Name for the \ref TCB0_PeriodGet API
  */
  /* cppcheck-suppress misra-c2012-2.5 */
-#define MainTimer_PeriodGet TCB0_PeriodGet
+#define TMain_PeriodGet TCB0_PeriodGet
 /**
  * @ingroup timerdriver
  * @brief Defines the Custom Name for the \ref TCB0_MaxCountGet API
  */
  /* cppcheck-suppress misra-c2012-2.5 */
-#define MainTimer_MaxCountGet TCB0_MaxCountGet
+#define TMain_MaxCountGet TCB0_MaxCountGet
 /**
  * @ingroup timerdriver
  * @brief Defines the Custom Name for the \ref TCB0_CaptureCallbackRegister API
  */
  /* cppcheck-suppress misra-c2012-2.5 */
-#define MainTimer_CaptureCallbackRegister TCB0_CaptureCallbackRegister
+#define TMain_CaptureCallbackRegister TCB0_CaptureCallbackRegister
 
 /**
  * @ingroup timerdriver
  * @struct TIMER_INTERFACE
  * @brief This is an instance of TIMER_INTERFACE for the TIMER module
  */
-extern const struct TIMER_INTERFACE MainTimer;
+extern const struct TIMER_INTERFACE TMain;
 
 /**
  * @ingroup timerdriver
